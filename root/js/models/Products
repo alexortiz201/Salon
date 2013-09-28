@@ -1,0 +1,12 @@
+var Product = Backbone.Model.extend({
+    defaults: {
+        brand: '',
+        type: '',
+        cost: ''
+    },
+    initialize: function(){
+        alert("Products");
+    }
+});
+
+var shampoo = new Product({brand:'Salerm', cost:'$10.00'});
