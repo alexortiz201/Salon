@@ -9,4 +9,4 @@ var Product = Backbone.Model.extend({
     }
 });
 
-var shampoo = new Product({brand:'Salerm', cost:'$10.00'});
+var shampoo = new Product({ brand:'Salerm', cost:'$10.00' });
