@@ -7,7 +7,7 @@ Salon = (function (){
   "use strict";
   return {
       init: function (){
-
+        window.alert('Hello Rich!');
       }
   };
 })();
