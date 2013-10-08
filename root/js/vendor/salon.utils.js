@@ -1,3 +1,4 @@
+// Salon namespace
 var Salon = Salon || {};
 
 Salon.utils = (function(){
