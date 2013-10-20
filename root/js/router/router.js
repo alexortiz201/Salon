@@ -14,6 +14,9 @@ app_router.on('route:getPost', function (id) {
 });
 
 app_router.on('route:defaultRoute', function (actions) {
+    if (actions){
+        var actions = 'Home';
+    }
     alert( actions );
     //take to home page by default
 });
