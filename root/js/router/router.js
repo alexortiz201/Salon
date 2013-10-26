@@ -1,3 +1,4 @@
+// ROUTER
 var AppRouter = Backbone.Router.extend({
     routes: {
         "page/:id": "getPage",
