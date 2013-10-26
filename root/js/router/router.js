@@ -4,17 +4,24 @@ var AppRouter = Backbone.Router.extend({
         "*other": "defaultRoute" // Backbone will try match the route above first
     },
 
+    rich: function(){
+        alert( "So Rich... What did you expect to find here?");
+    },
+
     getPage: function(id){
         alert( "Get page view " + id );
     },
 
     defaultRoute: function(other){
-        console.log('Invalid. You attempted to reach:' + other);
-        if (!actions){
-            var other = 'Home';
+        var other = other || 'Home';
+
+        // get View
+        if (other.toLowerCase() === 'rich'){
+            // easter egg
+            this.rich();
         }
-        alert( other );
-        //take to home page by default
+
+        console.log('Page: ' + other );
     }
 });
 
