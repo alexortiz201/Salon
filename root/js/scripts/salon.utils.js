@@ -23,6 +23,26 @@ Salon.utils = (function(){
             }
 
             return parent;
+        },
+
+        fetchTemplate: function (path, onSuccess) {
+            $.ajax({
+                url: window.location.pathname + path, //ex. /scripts/templates/users.html
+                cache: false,
+                success: function (data) {
+                    // add to DOMs
+                    $('body').append(data);
+
+                    if (onSuccess && typeof onSuccess === 'function'){
+                        onSuccess();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('RV.utils.loadTemplate error');
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
         }
     };
 

@@ -3,21 +3,77 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.container {max-width:940px !important;}
 
 ul.nav li.active a{ color:#E5AD1C !important; }
+.navbar-inner { background-image: none; background-color: #222; }
+.hero-unit {
+    -webkit-border-radius:0; -moz-border-radius:0; border-radius:0; border:20px solid #333;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
 
+.outer-shadow {
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 9px 24px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 9px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.5);
+}
 
+.intro .circle {
+    color:#fff;
+    border-radius: 180px;
+    background: #333;
+    text-align: center;
+    width: 270px;
+    height: 270px;
+    padding: 30px;
+    float: left;
+    min-height: 1px;
+    margin: 0 30px;
+}
 
+.intro .span4 {width: 157px;}
 
+/* widest */
+@media (min-width: 1200px){
+    .container {width:940px !important; max-width:940px !important;}
+    .intro .circle {
+        color:#fff;
+        border-radius: 180px;
+        background: #333;
+        text-align: center;
+        margin: 0 60px 0 0;
+        width: 270px;
+        height: 270px;
+        padding: 30px;
+    }
+    .middle {margin: 0 40px 0 0px;}
+    .row {margin-left: 0px;}
+    .intro .span4{ width:240px;}
+}
 
+/* phone */
+@media (max-width: 1199px) and (min-width: 767px) {
+    .intro .span4{ width:200px;}
+    .intro .circle {
+        color:#fff;
+        border-radius: 180px;
+        background: #333;
+        text-align: center;
+        margin: 0 90px;
+        width: 270px;
+        height: 270px;
+        padding: 30px;
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
+/* phone */
+@media (max-width: 767px) {
+    .circle{
+        height:290px;
+        padding-top: 30px;
+    }
+}

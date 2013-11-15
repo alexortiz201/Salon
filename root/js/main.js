@@ -5,9 +5,7 @@ _.templateSettings.variable = "rc";
 
 $(document).ready(function () {
     "use strict";
-    var template = _.template(
-        $( "script.template" ).html()
-    );
+
     $('.nav').on('click', 'li', function(){
 
         if ($(this).hasClass('dropdown') || $(this).parent().hasClass('dropdown-menu') ){
@@ -24,40 +22,27 @@ $(document).ready(function () {
         $('.nav li:first-child').addClass('active');
     });
 
-    //render hompage
+    // init function
     (function(){
-        var template = _.template(
-            $( "script.page" ).html()
-        );
 
-        // Define our render data (to be put into the "rc" variable).
-        var templateData = {
-            listTitle: "Olympic Volleyball Players",
-            listItems: [
-                {
-                    name: "Misty May-Treanor",
-                    hasOlympicGold: true
-                },
-                {
-                    name: "Kerri Walsh Jennings",
-                    hasOlympicGold: true
-                },
-                {
-                    name: "Jennifer Kessy",
-                    hasOlympicGold: false
-                },
-                {
-                    name: "April Ross",
-                    hasOlympicGold: false
-                }
-            ]
-        };
+        Salon.utils.fetchTemplate('/js/views/page.html', function(){
 
-        // Render the underscore template and inject it after the H1
-        // in our current DOM.
-        $( "content" ).html(
-            template( templateData )
-        );
+            //var compiled = _.template(data);
+
+            var template = _.template(
+                $( "script.page" ).html()
+            );
+
+            // Define our render data (to be put into the "rc" variable).
+            var templateData = HomePage;
+
+            // Render the underscore template and inject it after the H1
+            // in our current DOM.
+            $( "#content" ).html(
+                template(templateData)
+            );
+        });
+
     }());
 
 });

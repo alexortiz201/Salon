@@ -1,17 +1,16 @@
-<!-- BEGIN: Underscore Template Definition. -->
 <script type="text/template" class="page">
     <h2>
-        <%- rc.listTitle %>
+        <%- rc.pageTitle %>
     </h2>
 
     <ul>
-        <% _.each( rc.listItems, function( listItem ){ %>
+        <% _.each( rc.pageItems, function( pageItem ){ %>
 
         <li>
 
-            <%- listItem.name %>
+            <%- pageItem.name %>
 
-            <% if ( listItem.hasOlympicGold ){ %>
+            <% if ( pageItem.hasOlympicGold ){ %>
             <em>*</em>
             <% } %>
 
@@ -22,7 +21,7 @@
 
 
     <% var showFootnote = _.any(
-        _.pluck( rc.listItems, "hasOlympicGold" )
+        _.pluck( rc.pageItems, "hasOlympicGold" )
     ); %>
 
 
@@ -37,4 +36,3 @@
     <% } %>
 
 </script>
-<!-- END: Underscore Template Definition. -->
